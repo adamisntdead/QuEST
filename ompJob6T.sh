@@ -4,32 +4,26 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 
-# Choose the right amount of memory to ask for
-#SBATCH --mem=50Gb
-
-# uncomment if NUM_QUBITS > 31
-####SBATCH --mem=100Gb
-# uncomment if NUM_QUBITS > 32
-####SBATCH --mem=200Gb
-
 # set max wallclock time
-#SBATCH --time=00:10:00
+#SBATCH --time=01:30:00
 
 # set name of job
-#SBATCH --job-name QUEST
+#SBATCH --job-name QUEST_AB
 
 # set queue
-#SBATCH --partition=compute
+#SBATCH --partition=mem6T
 
-NUM_QUBITS=16
+NUM_QUBITS=33
 EXE=demo
 export OMP_PROC_BIND=true
-export OMP_NUM_THREADS=16
+export OMP_NUM_THREADS=32
 
 module purge
 module load intel-compilers/2016
 
 make clean
 make
+
+lscpu
 
 ./$EXE $NUM_QUBITS
