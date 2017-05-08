@@ -24,7 +24,4 @@ export OMP_NUM_THREADS=128
 module purge
 module load mvapich2
 
-make clean
-make
-
 mpirun $MPI_HOSTS ./$EXE $NUM_QUBITS
