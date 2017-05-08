@@ -24,7 +24,7 @@
 //! Max number of qubits in the system
 # define maxNumQubits   40
 //! Number of times rotations are repeated for timing purposes
-# define N_TRIALS 20
+# define N_TRIALS 5
 //! 1: print timing data to file, 0: no timing
 # define REPORT_TIMING 1
 //! 1: print end qubit state to file, 0: don't print

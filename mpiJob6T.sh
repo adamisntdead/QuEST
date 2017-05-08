@@ -9,7 +9,7 @@
 ####SBATCH --mem=100Gb
 
 # set max wallclock time
-#SBATCH --time=01:30:00
+#SBATCH --time=04:00:00
 
 # set name of job
 #SBATCH --job-name QUEST_AB
