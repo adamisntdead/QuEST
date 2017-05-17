@@ -9,19 +9,22 @@
 ####SBATCH --mem=100Gb
 
 # set max wallclock time
-#SBATCH --time=04:00:00
+#SBATCH --time=00:30:00
 
 # set name of job
 #SBATCH --job-name QUEST_AB
 
 # set queue
 #SBATCH --partition=mem6T
+#SBATCH --exclusive
 
-NUM_QUBITS=33
+NUM_QUBITS=31
 EXE=demo
 export OMP_NUM_THREADS=128
 
 module purge
 module load mvapich2
+
+. enable_arcus-b_mpi.sh
 
 mpirun $MPI_HOSTS ./$EXE $NUM_QUBITS
